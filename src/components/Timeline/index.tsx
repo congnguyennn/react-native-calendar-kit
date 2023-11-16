@@ -213,7 +213,6 @@ const Timeline: React.ForwardRefRenderFunction<
         const position =
           (subtractMinutes * heightByTimeInterval.value) / 60 + spaceFromTop;
         const offset = timelineLayoutRef.current.height / 2;
-        // goToOffsetY(Math.max(0, position - offset), true);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
