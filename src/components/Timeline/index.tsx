@@ -200,24 +200,6 @@ const Timeline: React.ForwardRefRenderFunction<
     [onTimeIntervalHeightChange]
   );
 
-  useEffect(() => {
-    if (!timelineLayoutRef.current.height) {
-      return;
-    }
-    requestAnimationFrame(() => {
-      const current = moment.tz(tzOffset);
-      const isSameDate = current.format('YYYY-MM-DD') === initialDate.current;
-      if (scrollToNow && isSameDate) {
-        const minutes = current.hour() * 60 + current.minute();
-        const subtractMinutes = minutes - start * 60;
-        const position =
-          (subtractMinutes * heightByTimeInterval.value) / 60 + spaceFromTop;
-        const offset = timelineLayoutRef.current.height / 2;
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [goToOffsetY, scrollToNow, timelineLayoutRef.current.height]);
-
   const _onContentLayout = ({ nativeEvent: { layout } }: LayoutChangeEvent) => {
     if (!minTimeIntervalHeight.value) {
       const minHeight = Math.max(
