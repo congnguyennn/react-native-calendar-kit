@@ -1,7 +1,6 @@
 import moment from 'moment-timezone';
 import React, {
   forwardRef,
-  useEffect,
   useImperativeHandle,
   useMemo,
 } from 'react';
@@ -65,8 +64,6 @@ const Timeline: React.ForwardRefRenderFunction<
     timeIntervalHeight,
     spaceFromTop,
     allowPinchToZoom,
-    scrollToNow,
-    initialDate,
     isShowHeader,
     currentIndex,
     pages,
