@@ -163,7 +163,6 @@
   },
   "dependencies": {
     "moment-timezone": "^0.5.40",
-    "lodash": "^4.17.21",
-    "moment": "2.18.1"
+    "lodash": "^4.17.21"
   }
 }
